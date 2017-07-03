@@ -20,7 +20,7 @@ var lib = require('bower-files')({
 });
 var browserSync = require('browser-sync').create();
 var sass = require ('gulp-sass');
-var sourcemaps require ('gulp-sourcemaps');
+var sourcemaps = require ('gulp-sourcemaps');
 
 gulp.task('concatInterface', function() {
   return gulp.src(['./js/*-interface.js'])
@@ -105,7 +105,7 @@ gulp.task('serve', ['build'], function() {
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
-  gulp.watch(["scss/*.scss", ['cssBuild']);
+  gulp.watch(["scss/*.scss"], ['cssBuild']);
 });
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
